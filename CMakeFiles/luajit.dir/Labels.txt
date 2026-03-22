@@ -1,0 +1,13 @@
+# Target labels
+ luajit
+# Source files and their labels
+/Users/82805/CLionProjects/vm/CMakeFiles/luajit
+/Users/82805/CLionProjects/vm/CMakeFiles/luajit.rule
+/Users/82805/CLionProjects/vm/CMakeFiles/luajit-complete.rule
+/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/luajit-build.rule
+/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/luajit-configure.rule
+/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/luajit-download.rule
+/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/luajit-install.rule
+/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/luajit-mkdir.rule
+/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/luajit-patch.rule
+/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/luajit-update.rule
