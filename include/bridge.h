@@ -3,6 +3,6 @@
 
 #include "sandbox.h"
 
-void bridge_register(Sandbox *sandbox);
+void bridge_register(const Sandbox *sandbox);
 
 #endif

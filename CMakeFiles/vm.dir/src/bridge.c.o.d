@@ -1,8 +1,8 @@
-CMakeFiles/vm.dir/src/bridge.c.o: \
-  /Users/82805/CLionProjects/vm/src/bridge.c \
-  /Users/82805/CLionProjects/vm/include/bridge.h \
-  /Users/82805/CLionProjects/vm/include/sandbox.h \
-  /Users/82805/CLionProjects/vm/include/allocator.h \
+vendor/vm/CMakeFiles/vm.dir/src/bridge.c.o: \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/src/bridge.c \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/include/bridge.h \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/include/sandbox.h \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/include/allocator.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stddef_header_macro.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stddef_ptrdiff_t.h \
@@ -13,7 +13,7 @@ CMakeFiles/vm.dir/src/bridge.c.o: \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stddef_unreachable.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stddef_max_align_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stddef_offsetof.h \
-  /Users/82805/CLionProjects/vm/luajit_install/include/luajit-2.1/lua.h \
+  /Users/82805/CLionProjects/polytoria/luajit_install/include/luajit-2.1/lua.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stdarg_header_macro.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stdarg___gnuc_va_list.h \
@@ -21,7 +21,7 @@ CMakeFiles/vm.dir/src/bridge.c.o: \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stdarg_va_arg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stdarg___va_copy.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stdarg_va_copy.h \
-  /Users/82805/CLionProjects/vm/luajit_install/include/luajit-2.1/luaconf.h \
+  /Users/82805/CLionProjects/polytoria/luajit_install/include/luajit-2.1/luaconf.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \

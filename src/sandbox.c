@@ -6,7 +6,7 @@
 #include <luajit.h>
 
 static void governor(lua_State *state, lua_Debug *ar) {
-    (void)ar;
+    (void) ar;
     fprintf(stderr, "%s: script exceeded CPU budget, terminating\n", __FILE__);
     luaL_error(state, "vm: script exceeded CPU budget");
 }

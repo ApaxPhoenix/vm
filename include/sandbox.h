@@ -8,12 +8,14 @@
 #define SANDBOX_INSTRUCTIONS 10000
 
 typedef struct {
-    lua_State  *state;
-    Allocator  *allocator;
+    lua_State *state;
+    Allocator *allocator;
 } Sandbox;
 
-Sandbox    *sandbox_create(void);
-void        sandbox_destroy(Sandbox *sandbox);
-int         sandbox_run(Sandbox *sandbox, const char *script);
+Sandbox *sandbox_create(void);
+
+void sandbox_destroy(Sandbox *sandbox);
+
+int sandbox_run(Sandbox *sandbox, const char *script);
 
 #endif

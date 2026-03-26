@@ -17,13 +17,14 @@ Allocator *allocator_create(const size_t capacity) {
 
 void allocator_destroy(Allocator *allocator) {
     if (allocator == NULL) return;
-    fprintf(stdout, "%s: destroying allocator (consumed: %zu, capacity: %zu)\n", __FILE__, allocator->consumed, allocator->capacity);
+    fprintf(stdout, "%s: destroying allocator (consumed: %zu, capacity: %zu)\n", __FILE__, allocator->consumed,
+            allocator->capacity);
     free(allocator);
     fprintf(stdout, "%s: allocator destroyed\n", __FILE__);
 }
 
 void *allocator_func(void *ud, void *ptr, const size_t osize, const size_t size) {
-    Allocator *allocator = (Allocator *)ud;
+    Allocator *allocator = (Allocator *) ud;
 
     if (ptr != NULL && osize > 0) {
         if (osize <= allocator->consumed)

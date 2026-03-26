@@ -1,6 +1,6 @@
-CMakeFiles/vm.dir/src/platforms/macos.c.o: \
-  /Users/82805/CLionProjects/vm/src/platforms/macos.c \
-  /Users/82805/CLionProjects/vm/include/platform.h \
+vendor/vm/CMakeFiles/vm.dir/src/platforms/macos.c.o: \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/src/platforms/macos.c \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/include/platform.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \

@@ -6,22 +6,22 @@ cmake_minimum_required(VERSION ${CMAKE_VERSION}) # this file comes with cmake
 # If CMAKE_DISABLE_SOURCE_CHANGES is set to true and the source directory is an
 # existing directory in our source tree, calling file(MAKE_DIRECTORY) on it
 # would cause a fatal error, even though it would be a no-op.
-if(NOT EXISTS "/Users/82805/CLionProjects/vm/vendor/luajit")
-  file(MAKE_DIRECTORY "/Users/82805/CLionProjects/vm/vendor/luajit")
+if(NOT EXISTS "/Users/82805/CLionProjects/polytoria/vendor/luajit")
+  file(MAKE_DIRECTORY "/Users/82805/CLionProjects/polytoria/vendor/luajit")
 endif()
 file(MAKE_DIRECTORY
-  "/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-build"
-  "/Users/82805/CLionProjects/vm/luajit-prefix"
-  "/Users/82805/CLionProjects/vm/luajit-prefix/tmp"
-  "/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp"
-  "/Users/82805/CLionProjects/vm/luajit-prefix/src"
-  "/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp"
+  "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix/src/luajit-build"
+  "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix"
+  "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix/tmp"
+  "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix/src/luajit-stamp"
+  "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix/src"
+  "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix/src/luajit-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix/src/luajit-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/Users/82805/CLionProjects/vm/luajit-prefix/src/luajit-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/Users/82805/CLionProjects/polytoria/vendor/vm/luajit-prefix/src/luajit-stamp${cfgdir}") # cfgdir has leading slash
 endif()

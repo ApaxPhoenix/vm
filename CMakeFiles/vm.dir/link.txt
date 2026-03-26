@@ -1,1 +1,2 @@
-/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/vm.dir/src/main.c.o CMakeFiles/vm.dir/src/sandbox.c.o CMakeFiles/vm.dir/src/allocator.c.o CMakeFiles/vm.dir/src/bridge.c.o CMakeFiles/vm.dir/src/platforms/macos.c.o -o vm  luajit_install/lib/libluajit-5.1.a -lm -ldl -lpthread
+/usr/bin/ar qc libvm.a CMakeFiles/vm.dir/src/sandbox.c.o CMakeFiles/vm.dir/src/allocator.c.o CMakeFiles/vm.dir/src/bridge.c.o CMakeFiles/vm.dir/src/platforms/macos.c.o
+/usr/bin/ranlib libvm.a

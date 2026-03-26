@@ -35,24 +35,18 @@ set_target_properties(lua_static PROPERTIES
         INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_BINARY_DIR}/luajit_install/include/luajit-2.1"
 )
 
-add_executable(vm
-        src/main.c
+add_library(vm STATIC
         src/sandbox.c
         src/allocator.c
         src/bridge.c
-        src/engine.c
-        src/scene.c
-        src/entity.c
-        src/events.c
-        src/assets.c
         src/platforms/macos.c
 )
 
 add_dependencies(vm lua_static)
 
-target_include_directories(vm PRIVATE
+target_include_directories(vm PUBLIC
         include
         "${CMAKE_BINARY_DIR}/luajit_install/include/luajit-2.1"
 )
 
-target_link_libraries(vm PRIVATE lua_static m dl pthread)
+target_link_libraries(vm PUBLIC lua_static m dl pthread)

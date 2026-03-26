@@ -40,18 +40,18 @@
 #define LUAJIT_MODE_MASK	0x00ff
 
 enum {
-  LUAJIT_MODE_ENGINE,		/* Set mode for whole JIT engine. */
-  LUAJIT_MODE_DEBUG,		/* Set debug mode (idx = level). */
+    LUAJIT_MODE_ENGINE, /* Set mode for whole JIT engine. */
+    LUAJIT_MODE_DEBUG, /* Set debug mode (idx = level). */
 
-  LUAJIT_MODE_FUNC,		/* Change mode for a function. */
-  LUAJIT_MODE_ALLFUNC,		/* Recurse into subroutine protos. */
-  LUAJIT_MODE_ALLSUBFUNC,	/* Change only the subroutines. */
+    LUAJIT_MODE_FUNC, /* Change mode for a function. */
+    LUAJIT_MODE_ALLFUNC, /* Recurse into subroutine protos. */
+    LUAJIT_MODE_ALLSUBFUNC, /* Change only the subroutines. */
 
-  LUAJIT_MODE_TRACE,		/* Flush a compiled trace. */
+    LUAJIT_MODE_TRACE, /* Flush a compiled trace. */
 
-  LUAJIT_MODE_WRAPCFUNC = 0x10,	/* Set wrapper mode for C function calls. */
+    LUAJIT_MODE_WRAPCFUNC = 0x10, /* Set wrapper mode for C function calls. */
 
-  LUAJIT_MODE_MAX
+    LUAJIT_MODE_MAX
 };
 
 /* Flags or'ed in to the mode. */
@@ -66,12 +66,15 @@ LUA_API int luaJIT_setmode(lua_State *L, int idx, int mode);
 
 /* Low-overhead profiling API. */
 typedef void (*luaJIT_profile_callback)(void *data, lua_State *L,
-					int samples, int vmstate);
+                                        int samples, int vmstate);
+
 LUA_API void luaJIT_profile_start(lua_State *L, const char *mode,
-				  luaJIT_profile_callback cb, void *data);
+                                  luaJIT_profile_callback cb, void *data);
+
 LUA_API void luaJIT_profile_stop(lua_State *L);
+
 LUA_API const char *luaJIT_profile_dumpstack(lua_State *L, const char *fmt,
-					     int depth, size_t *len);
+                                             int depth, size_t *len);
 
 /* Enforce (dynamic) linker error for version mismatches. Call from main. */
 LUA_API void LUAJIT_VERSION_SYM(void);

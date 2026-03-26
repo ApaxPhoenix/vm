@@ -1,6 +1,6 @@
-CMakeFiles/vm.dir/src/allocator.c.o: \
-  /Users/82805/CLionProjects/vm/src/allocator.c \
-  /Users/82805/CLionProjects/vm/include/allocator.h \
+vendor/vm/CMakeFiles/vm.dir/src/allocator.c.o: \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/src/allocator.c \
+  /Users/82805/CLionProjects/polytoria/vendor/vm/include/allocator.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stddef_header_macro.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stddef_ptrdiff_t.h \
