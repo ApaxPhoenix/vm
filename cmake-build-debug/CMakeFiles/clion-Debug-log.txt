@@ -1,4 +1,0 @@
-Cannot generate into /Users/82805/CLionProjects/polytoria/vendor/vm
-It is already used for project /Users/82805/CLionProjects/vm
-
-Please either delete it manually or select another generation directory

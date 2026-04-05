@@ -1,4 +1,0 @@
-/Users/82805/CLionProjects/vm/CMakeFiles/luajit.dir
-/Users/82805/CLionProjects/vm/CMakeFiles/vm.dir
-/Users/82805/CLionProjects/vm/CMakeFiles/edit_cache.dir
-/Users/82805/CLionProjects/vm/CMakeFiles/rebuild_cache.dir
