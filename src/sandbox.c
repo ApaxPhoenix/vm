@@ -1,5 +1,4 @@
 #include "sandbox.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <lualib.h>
 #include <lauxlib.h>
@@ -40,13 +39,6 @@ Sandbox *sandbox_create(void) {
     luaL_openlibs(sandbox->state);
     fprintf(stdout, "%s: standard libs loaded\n", __FILE__);
 
-    if (luaL_dofile(sandbox->state, "scripts/init.lua") != LUA_OK) {
-        fprintf(stderr, "%s: init failed: %s\n", __FILE__, lua_tostring(sandbox->state, -1));
-        sandbox_destroy(sandbox);
-        return NULL;
-    }
-    fprintf(stdout, "%s: environment locked down\n", __FILE__);
-
     fprintf(stdout, "%s: sandbox ready\n", __FILE__);
     return sandbox;
 }
@@ -60,21 +52,42 @@ void sandbox_destroy(Sandbox *sandbox) {
     fprintf(stdout, "%s: sandbox destroyed\n", __FILE__);
 }
 
-int sandbox_run(Sandbox *sandbox, const char *script) {
+int sandbox_run(Sandbox *sandbox, const char *path) {
     fprintf(stdout, "%s: running script\n", __FILE__);
 
     lua_State *state = sandbox->state;
-
     lua_State *thread = lua_newthread(state);
 
     luaJIT_setmode(thread, 0, LUAJIT_MODE_ENGINE | LUAJIT_MODE_OFF);
     lua_sethook(thread, governor, LUA_MASKCOUNT, SANDBOX_INSTRUCTIONS);
 
-    if (luaL_loadstring(thread, script) != LUA_OK) {
+    if (luaL_loadfile(thread, INIT_LUA_PATH) != LUA_OK) {
+        fprintf(stderr, "%s: init error: %s\n", __FILE__, lua_tostring(thread, -1));
+        lua_pop(state, 1);
+        return 0;
+    }
+
+    if (lua_pcall(thread, 0, 1, 0) != LUA_OK) {
+        fprintf(stderr, "%s: init error: %s\n", __FILE__, lua_tostring(thread, -1));
+        lua_pop(state, 1);
+        return 0;
+    }
+
+    if (lua_pcall(thread, 0, 1, 0) != LUA_OK) {
+        fprintf(stderr, "%s: isolate error: %s\n", __FILE__, lua_tostring(thread, -1));
+        lua_pop(state, 1);
+        return 0;
+    }
+
+    if (luaL_loadfile(thread, path) != LUA_OK) {
         fprintf(stderr, "%s: compile error: %s\n", __FILE__, lua_tostring(thread, -1));
         lua_pop(state, 1);
         return 0;
     }
+
+    lua_pushvalue(thread, -2);
+    lua_setfenv(thread, -2);
+    lua_remove(thread, -2);
 
     int result = lua_resume(thread, 0);
 

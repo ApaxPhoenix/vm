@@ -7,7 +7,7 @@ Allocator *allocator_create(const size_t capacity) {
     Allocator *allocator = malloc(sizeof(Allocator));
     if (allocator == NULL) {
         fprintf(stderr, "%s: failed to allocate allocator\n", __FILE__);
-        return NULL;
+        return nullptr;
     }
     allocator->consumed = 0;
     allocator->capacity = capacity;
@@ -24,7 +24,7 @@ void allocator_destroy(Allocator *allocator) {
 }
 
 void *allocator_func(void *ud, void *ptr, const size_t osize, const size_t size) {
-    Allocator *allocator = (Allocator *) ud;
+    Allocator *allocator = ud;
 
     if (ptr != NULL && osize > 0) {
         if (osize <= allocator->consumed)

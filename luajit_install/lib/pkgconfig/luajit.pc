@@ -5,7 +5,7 @@ relver=1772619647
 version=${majver}.${minver}.${relver}
 abiver=5.1
 
-prefix=/Users/82805/CLionProjects/vm/luajit_install
+prefix=/Users/82805/CLionProjects/polytoria/vendor/vm/luajit_install
 multilib=lib
 exec_prefix=${prefix}
 libdir=${exec_prefix}/${multilib}

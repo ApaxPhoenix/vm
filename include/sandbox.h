@@ -16,6 +16,6 @@ Sandbox *sandbox_create(void);
 
 void sandbox_destroy(Sandbox *sandbox);
 
-int sandbox_run(Sandbox *sandbox, const char *script);
+int sandbox_run(Sandbox *sandbox, const char *path);
 
 #endif
