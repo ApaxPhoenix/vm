@@ -61,7 +61,7 @@ int sandbox_run(Sandbox *sandbox, const char *path) {
     luaJIT_setmode(thread, 0, LUAJIT_MODE_ENGINE | LUAJIT_MODE_OFF);
     lua_sethook(thread, governor, LUA_MASKCOUNT, SANDBOX_INSTRUCTIONS);
 
-    if (luaL_loadfile(thread, INIT_LUA_PATH) != LUA_OK) {
+    if (luaL_loadfile(thread, "vendor/vm/init.lua") != LUA_OK) {
         fprintf(stderr, "%s: init error: %s\n", __FILE__, lua_tostring(thread, -1));
         lua_pop(state, 1);
         return 0;
