@@ -20,7 +20,7 @@
 #define LUA_LDIR	"!\\lua\\"
 #define LUA_CDIR	"!\\"
 #define LUA_PATH_DEFAULT \
-  ".\\?.lua;" LUA_LDIR"?.lua;" LUA_LDIR"?\\init.lua;"
+  ".\\?.lua;" LUA_LDIR"?.lua;" LUA_LDIR"?\\server.lua;"
 #define LUA_CPATH_DEFAULT \
   ".\\?.dll;" LUA_CDIR"?.dll;" LUA_CDIR"loadall.dll"
 #else
@@ -41,7 +41,7 @@
 #define LUA_JROOT	LUA_ROOT
 #define LUA_RLDIR	LUA_ROOT "/share" LUA_LUADIR
 #define LUA_RCDIR	LUA_ROOT "/" LUA_MULTILIB LUA_LUADIR
-#define LUA_RLPATH	";" LUA_RLDIR "?.lua;" LUA_RLDIR "?/init.lua"
+#define LUA_RLPATH	";" LUA_RLDIR "?.lua;" LUA_RLDIR "?/server.lua"
 #define LUA_RCPATH	";" LUA_RCDIR "?.so"
 #else
 #define LUA_JROOT	LUA_LROOT
@@ -56,7 +56,7 @@
 #define LUA_JPATH	";" LUA_LJDIR "/?.lua"
 #define LUA_LLDIR	LUA_LROOT "/share" LUA_LUADIR
 #define LUA_LCDIR	LUA_LROOT "/" LUA_LMULTILIB LUA_LUADIR
-#define LUA_LLPATH	";" LUA_LLDIR "?.lua;" LUA_LLDIR "?/init.lua"
+#define LUA_LLPATH	";" LUA_LLDIR "?.lua;" LUA_LLDIR "?/server.lua"
 #define LUA_LCPATH1	";" LUA_LCDIR "?.so"
 #define LUA_LCPATH2	";" LUA_LCDIR "loadall.so"
 

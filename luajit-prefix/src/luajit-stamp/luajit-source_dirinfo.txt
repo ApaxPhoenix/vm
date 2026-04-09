@@ -4,6 +4,6 @@
 
 method=source_dir
 command=
-source_dir=/Users/82805/CLionProjects/polytoria/vendor/luajit
+source_dir=/Users/82805/CLionProjects/env/vendor/vm/vendor/luajit
 work_dir=
 

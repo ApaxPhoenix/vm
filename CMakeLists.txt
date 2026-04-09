@@ -35,12 +35,15 @@ set_target_properties(lua_static PROPERTIES
         INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_BINARY_DIR}/luajit_install/include/luajit-2.1"
 )
 
-add_library(vm STATIC
-        src/sandbox.c
-        src/allocator.c
-        src/bridge.c
-        src/platforms/macos.c
+file(GLOB_RECURSE VM_SOURCES CONFIGURE_DEPENDS
+        "${CMAKE_SOURCE_DIR}/src/*.c"
 )
+
+file(GLOB_RECURSE VM_INCLUDES CONFIGURE_DEPENDS
+        "${CMAKE_SOURCE_DIR}/include/*.h"
+)
+
+add_library(vm STATIC ${VM_SOURCES})
 
 add_dependencies(vm lua_static)
 
@@ -48,5 +51,14 @@ target_include_directories(vm PUBLIC
         include
         "${CMAKE_BINARY_DIR}/luajit_install/include/luajit-2.1"
 )
+
+file(COPY "${CMAKE_SOURCE_DIR}/server.lua"
+        DESTINATION "${CMAKE_BINARY_DIR}/vendor/vm")
+
+file(COPY "${CMAKE_SOURCE_DIR}/client.lua"
+        DESTINATION "${CMAKE_BINARY_DIR}/vendor/vm")
+
+file(COPY "${CMAKE_SOURCE_DIR}/signal.lua"
+        DESTINATION "${CMAKE_BINARY_DIR}/vendor/vm")
 
 target_link_libraries(vm PUBLIC lua_static m dl pthread)
