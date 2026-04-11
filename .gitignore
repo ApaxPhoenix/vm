@@ -9,6 +9,6 @@ build/
 *.o
 *.a
 libvm.a
-server.lua
+core/server.lua
 luajit_install/
 luajit-prefix/

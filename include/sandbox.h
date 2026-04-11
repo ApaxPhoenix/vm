@@ -1,25 +1,32 @@
 #ifndef SANDBOX_H
 #define SANDBOX_H
 
-#include "allocator.h"
 #include <lua.h>
+#include "allocator.h"
 
-#define MEMORY       (64 * 1024 * 1024)
-#define INSTRUCTIONS 10000
+#define SANDBOX_MEMORY       (64 * 1024 * 1024)
+#define SANDBOX_INSTRUCTIONS 1000000
+#define MAX_COROUTINES       16
+#define MAX_STRING           (1024 * 1024)
+
+#ifndef VM_PATH
+#error  "VM_PATH must be defined"
+#endif
+#define SANDBOX_PATH(x) VM_PATH "/" x
 
 typedef enum {
-    SERVER,
-    CLIENT,
+    SANDBOX_SERVER,
+    SANDBOX_CLIENT
 } Context;
 
 typedef struct {
-    lua_State    *state;
-    Allocator    *allocator;
     Context context;
+    Allocator *allocator;
+    lua_State *state;
 } Sandbox;
 
 Sandbox *sandbox_create(Context context);
-void     sandbox_destroy(Sandbox *sandbox);
-int      sandbox_run(Sandbox *sandbox, const char *path);
+void sandbox_destroy(Sandbox *sandbox);
+int sandbox_run(Sandbox *sandbox, const char *path);
 
 #endif
